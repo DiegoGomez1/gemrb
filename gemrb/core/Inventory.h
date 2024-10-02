@@ -358,6 +358,11 @@ public:
 	static int GetInventorySlot();
 	int InBackpack(int slot) const;
 	void CacheAllWeaponInfo() const;
+
+		///Changes to code updates empty containers to gray 
+	void UpdateContainerColor(Container& container, uint32_t GUIDefines);
+	/// End of Changes
+	
 private:
 	void CalculateWeight(void);
 	int FindRangedProjectile(unsigned int type) const;

@@ -676,6 +676,24 @@ void Inventory::TryEquipAll(int slot)
 	}
 }
 
+	///Changes to code 
+
+	void UpdateContainerColor(Container& container, uint32_t GUIDefines) {
+
+    Color containerColor = Colors.get("ALTCONTAINER");
+
+    // Check if the 32nd bit of GUIEnhancement is active
+    bool isGUIEnhanced = (GUIDefines & (1 << 32)) != 0;
+
+	// changes the color of the container to light gray
+
+    if (isGUIEnhanced) {
+        if (container.Inventory.isEmpty()) {
+            containerColor = Colors.get("LIGHT_GREY");
+        }
+    }
+	
+
 int Inventory::AddStoreItem(STOItem* item, int action)
 {
 	CREItem *temp;
